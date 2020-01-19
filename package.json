@@ -6,13 +6,23 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "storybook": "start-storybook -p 6006 -s public --ci",
+    "build-storybook": "build-storybook -s public"
   },
   "dependencies": {
     "core-js": "^3.4.4",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vuex": "^3.1.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@storybook/addon-actions": "^5.3.6",
+    "@storybook/addon-knobs": "^5.3.6",
+    "@storybook/addon-links": "^5.3.6",
+    "@storybook/addon-storyshots": "^5.3.6",
+    "@storybook/addons": "^5.3.6",
+    "@storybook/vue": "^5.3.6",
     "@vue/cli-plugin-babel": "^4.1.0",
     "@vue/cli-plugin-eslint": "^4.1.0",
     "@vue/cli-plugin-unit-jest": "^4.1.0",
@@ -20,9 +30,12 @@
     "@vue/eslint-config-prettier": "^5.0.0",
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-vue": "^2.0.2",
     "eslint": "^5.16.0",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^5.0.0",
+    "jest-vue-preprocessor": "^1.7.0",
     "prettier": "^1.19.1",
     "vue-template-compiler": "^2.6.10"
   }
