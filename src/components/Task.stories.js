@@ -90,7 +90,9 @@ export const Default = () => ({
   template: taskTemplate,
   props: {
     task: {
-      default: object("task", { ...taskData })
+      //default: () => object("task", { ...taskData })
+      // eslint-disable-next-line prettier/prettier
+      default: () => taskData,
     }
   },
   methods: actionsData
@@ -100,11 +102,17 @@ export const Pinned = () => ({
   components: { Task },
   template: taskTemplate,
   props: {
-    task: {
+    /* task: {
       default: {
         ...taskData,
         state: "TASK_PINNED"
       }
+    } */
+    task: {
+      default: () => ({
+        ...taskData,
+        state: "TASK_PINNED"
+      })
     }
   },
   methods: actionsData
@@ -115,10 +123,10 @@ export const Archived = () => ({
   template: taskTemplate,
   props: {
     task: {
-      default: {
+      default: () => ({
         ...taskData,
         state: "TASK_ARCHIVED"
-      }
+      })
     }
   },
   methods: actionsData
@@ -128,10 +136,10 @@ export const LongTitle = () => ({
   template: taskTemplate,
   props: {
     task: {
-      default: {
+      default: () => ({
         ...taskData,
         title: longTitle
-      }
+      })
     }
   },
   methods: actionsData
